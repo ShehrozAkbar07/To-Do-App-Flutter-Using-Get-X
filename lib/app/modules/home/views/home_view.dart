@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:todo_app/app/core/utils/extension.dart';
+import 'package:todo_app/app/modules/home/views/add_card.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -19,6 +20,12 @@ class HomeView extends GetView<HomeController> {
             'My List',
             style: TextStyle(fontSize: 24.0.sp, fontWeight: FontWeight.bold),
           ),
+        ),
+        GridView.count(
+          crossAxisCount: 2,
+          shrinkWrap: true,
+          physics: ClampingScrollPhysics(),
+          children: [AddCard()],
         )
       ],
     )));
