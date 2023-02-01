@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:todo_app/app/core/utils/extension.dart';
+import 'package:todo_app/app/data/models/task.dart';
 import 'package:todo_app/app/modules/home/views/add_card.dart';
+import 'package:todo_app/app/modules/home/views/task_card.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -25,7 +27,11 @@ class HomeView extends GetView<HomeController> {
           crossAxisCount: 2,
           shrinkWrap: true,
           physics: ClampingScrollPhysics(),
-          children: [AddCard()],
+          children: [
+            TaskCard(
+                task: Task(title: 'title', icon: 0xe59c, color: '#FF2B60E6')),
+            AddCard()
+          ],
         )
       ],
     )));
